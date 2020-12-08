@@ -1,0 +1,29 @@
+<div class="appointment-list item-list mb-3">
+  <div class="pet-item col media py-3" *ngFor="let item of aptList">
+    <div class="mr-3">
+      <button class="pet-delete btn btn-sm btn-danger" (click)="handleDelete(item)">
+        <i class="fa fa-times" alt="delete" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="pet-info media-body">
+      <div class="pet-head d-flex">
+        <span class="apt-date ml-auto">{{item.aptDate |date:'M-d h:mm a' }}</span>
+      </div>
+
+      <div class="owner-name">
+        <span class="label-item">Doctor: </span>
+        <span contenteditable="true">{{item.doctorName}}</span>
+      </div>
+      <div class="owner-name">
+        <span class="label-item">Patient: </span>
+        <span contenteditable="true">{{item.patientName}}</span>
+      </div>
+      <div class="owner-name">
+        <span class="label-item">Cost: </span>
+        <span contenteditable="true">${{item.cost}}</span>
+      </div>
+      <div class="apt-notes" contenteditable="true">{{item.aptNotes}}</div>
+    </div>
+  </div>
+</div>
